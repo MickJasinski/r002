@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,400,700,900|Merriweather:900');
+@import 'partials';
+
+
+/* ---- Global ---- */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-colir: red;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+[class*="col-"] {
+    width: 100%;
+    float: left;
+}
+
+
+
+/* ---- Header (incl. nav) ---- */
+
+header {
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    background-color: #252726;
+    z-index: 1;
+    nav ul {
+        margin: 0;
+        list-style-type: none;
+        float: right;
+    }
+    nav ul>li {
+        display: inline-block;
+    }
+    nav ul>li>a {
+        line-height: 40px;
+        display: block;
+        color: #fff;
+        padding: 0 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: .3s;
+        &:hover {
+            background-color: #474747;
+        }
+    }
+    .active {
+        color: #18BBE2;
+    }
+    img {
+        padding: 5px 0;
+    }
+}
+
+
+
+
+
+
+// header>nav ul {
+//     margin: 0;
+//     list-style-type: none;
+//     float: right;
+// }
+// header>nav ul>li {
+//     display: inline-block;
+// }
+// header>nav ul>li>a {
+//     line-height: 40px;
+//     display: block;
+//     color: #fff;
+//     padding: 0 20px;
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     transition: .3s;
+// }
+// header>nav ul>li>a:hover {
+//     background-color: #474747;
+// }
+// header .active {
+//     color: #18BBE2;
+// }
+// header img {
+//     padding: 5px 0;
+// }
+@media (max-width: 767px) {
+    header .row {
+        text-align: center;
+    }
+    header>nav ul {
+        float: none;
+    }
+    header>nav ul>li {
+        display: block;
+    }
+    header img {
+        text-align: center;
+    }
+}
+
+
+
+/* ---- Hero ---- */
+
+.hero {
+    background-image: url(https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=750);
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.slogan {
+    background-color: rgba(0, 0, 0, .7);
+    float: right;
+    min-width: 50vw;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 35vh;
+}
+
+.slogan h1 {
+    line-height: 100%;
+    padding-left: 3px
+}
+
+.slogan h3 {
+    font-size: 28px;
+    font-weight: 100;
+    line-height: 100%;
+}
+
+
+
+/* ---- Feat ---- */
+
+[class*="col-"] h4,
+[class*="col-"] p {
+    padding: 20px;
+}
+
+section .row {
+    margin: 60px auto;
+    text-align: center;
+}
+
+section p {
+    color: #aaa;
+}
+
+section h2:hover {
+    color: #18BBE2;
+}
+
+.featicons .fa {
+    font-size: 60px;
+    line-height: 100px;
+    color: white;
+    background-color: #252726;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    transition: .3s;
+}
+
+.feat h2 {
+    text-transform: uppercase;
+    transition: .3s;
+    color: #03282E;
+}
+
+.feat:hover {
+    cursor: pointer;
+}
+
+.feat:hover .fa {
+    background-color: #18BBE2;
+    transform: scale(1.06);
+}
+
+.feat:hover h2 {
+    color: #18BBE2;
+}
+
+.featworks h1 {
+    font-weight: 900;
+    font-size: 32px;
+}
+
+
+
+/* ---- Gallery ---- */
+
+.image-1 {
+    background-image: url(https://picsum.photos/458/354?image=1067);
+}
+
+.image-2 {
+    background-image: url(https://picsum.photos/458/354?image=618);
+}
+
+.image-3 {
+    background-image: url(https://picsum.photos/458/354?image=516);
+}
+
+.gallery [class*="col-"] {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    overflow: hidden;
+    height: 20vw;
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery .row {
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.gallery .image {
+    display: block;
+    box-sizing: content-box;
+    overflow: hidden;
+    height: 20vw;
+}
+
+.gallery .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .7);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.gallery [class*="col-"]:hover .overlay {
+    height: 100%;
+}
+
+.gallery .icons {
+    white-space: nowrap;
+    color: white;
+    font-size: 2vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gallery a {
+    color: white;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .gallery [class*="col-"] {
+        min-height: 200px;
+    }
+    .gallery [class*="col-"] .overlay {
+        height: 20%;
+    }
+    .gallery .icons {
+        font-size: 20px;
+    }
+    .gallery [class*="col-"]:hover .overlay {
+        height: 20%;
+    }
+}
+
+
+
+/* ---- Members ----*/
+
+.member-1 {
+    background-image: url(https://randomuser.me/api/portraits/men/73.jpg);
+}
+
+.member-2 {
+    background-image: url(https://randomuser.me/api/portraits/women/44.jpg);
+}
+
+.member-3 {
+    background-image: url(https://randomuser.me/api/portraits/women/57.jpg);
+}
+
+.member-4 {
+    background-image: url(https://randomuser.me/api/portraits/men/1.jpg);
+}
+
+.members [class*="col-"] {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.members .item {
+    display: inline-block;
+    padding: 15px;
+}
+
+.members h5 {
+    line-height: 250px;
+    color: white;
+}
+
+.members p {
+    display: none;
+}
+
+.members .overlay {
+    position: absolute;
+    top: 125px;
+    left: 125px;
+    background-color: rgba(0, 0, 0, .7);
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transition: .5s ease;
+}
+
+.members [class*="member-"]:hover .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .members [class*="col-"]:hover .overlay {
+        height: 0;
+    }
+    .members p {
+        display: inline-block;
+    }
+}
+
+
+
+/* ---- Extras ---- */
+
+.extras img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.extras h1 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.extras p {
+    text-align: left;
+}
+
+
+
+/* ---- Figures ---- */
+
+.figures h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.figures h2 {
+    color: #18BBE2;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.figures .row {
+    margin: 40px;
+}
+
+
+
+/* ---- Footer ---- */
+
+.footer {
+    background-color: #252726;
+}
+
+.footer>.row {
+    padding-top: 40px;
+    margin-bottom: 25px;
+}
+
+.footer [class*="col-"] {
+    padding: 0;
+}
+
+.footer [class*="col-"] .row {
+    margin: 0;
+    padding: 0;
+}
+
+.footer h3,
+.footer h6,
+.footer p {
+    color: #aaa;
+    text-align: left;
+    padding: 20px;
+}
+
+.footer h3 span {
+    left: 20px;
+}
+
+.footer h6 {
+    font-size: 16px;
+    padding: 23px;
+}
+
+.footer p {
+    font-weight: 100;
+}
+
+.footer .socicons .fa {
+    box-sizing: content-box;
+    color: white;
+    background-color: #18BBE2;
+    padding: 5px;
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 3px;
+}
+
+.footer .copy {
+    width: 100%;
+    background-color: #111;
+}
+
+.footer .copy p {
+    text-align: center;
+}
+
+
+
+/* ---- Grid ---- */
+
+section>.container {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.col-offset-0 {
+    margin-left: 0;
+}
+
+.col-offset-1 {
+    margin-left: 8.33%;
+}
+
+.col-offset-2 {
+    margin-left: 16.66%;
+}
+
+.col-offset-3 {
+    margin-left: 25%;
+}
+
+.col-offset-4 {
+    margin-left: 33.33%;
+}
+
+.col-offset-5 {
+    margin-left: 41.66%;
+}
+
+.col-offset-6 {
+    margin-left: 50%;
+}
+
+.col-offset-7 {
+    margin-left: 58.33%;
+}
+
+.col-offset-8 {
+    margin-left: 66.66%;
+}
+
+.col-offset-9 {
+    margin-left: 75%;
+}
+
+.col-offset-10 {
+    margin-left: 83.33%;
+}
+
+.col-offset-11 {
+    margin-left: 91.66%;
+}
+
+@media (max-width: 992px) {
+    /* For desktop: */
+    .col-m-1 {
+        width: 8.33%;
+    }
+    .col-m-2 {
+        width: 16.66%;
+    }
+    .col-m-3 {
+        width: 25%;
+    }
+    .col-m-4 {
+        width: 33.33%;
+    }
+    .col-m-5 {
+        width: 41.66%;
+    }
+    .col-m-6 {
+        width: 50%;
+    }
+    .col-m-7 {
+        width: 58.33%;
+    }
+    .col-m-8 {
+        width: 66.66%;
+    }
+    .col-m-9 {
+        width: 75%;
+    }
+    .col-m-10 {
+        width: 83.33%;
+    }
+    .col-m-11 {
+        width: 91.66%;
+    }
+    .col-m-12 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+    .col-s-2 {
+        width: 16.66%;
+    }
+    .col-s-3 {
+        width: 25%;
+    }
+    .col-s-4 {
+        width: 33.33%;
+    }
+    .col-s-5 {
+        width: 41.66%;
+    }
+    .col-s-6 {
+        width: 50%;
+    }
+    .col-s-7 {
+        width: 58.33%;
+    }
+    .col-s-8 {
+        width: 66.66%;
+    }
+    .col-s-9 {
+        width: 75%;
+    }
+    .col-s-10 {
+        width: 83.33%;
+    }
+    .col-s-11 {
+        width: 91.66%;
+    }
+    .col-s-12 {
+        width: 100%;
+    }
+    .col-s-offset-1 {
+        margin-left: 8.33%;
+    }
+}
